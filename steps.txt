@@ -1,0 +1,21 @@
+./geth account new --datadir node1
+Public address of the key:   0x80464f155168FF5dAE6A41f4977C6794900DA5bb
+--------------------------------
+./geth account new --datadir node2
+Public address of the key:   0x5025aF574ca19D95aAf46273E4099433b58c6993
+--------------------------------
+./puppeth
+---------------------------------
+./geth --datadir node1 init marknet.json
+
+./geth --datadir node2 init marknet.json
+---------------------------------
+./geth --datadir node1 --unlock 0x80464f155168FF5dAE6A41f4977C6794900DA5bb --mine --rpc --allow-insecure-unlock
+
+---------------------------------
+./geth --datadir node2 --unlock 0x5025aF574ca19D95aAf46273E4099433b58c6993 --mine --port 30304 --bootnodes "enode://89962306a4ee899448c9044962e7f318a002c1b50b898cebc744631384d7e3e5503074af989e43de55ba531f8f41992118e2f33e4827fc1ebb8ec27ed1b6d5a8@127.0.0.1:30303" --ipcdisable --allow-insecure-unlock
+
+
+
+
+
